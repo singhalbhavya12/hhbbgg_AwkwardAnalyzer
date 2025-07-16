@@ -53,21 +53,6 @@ def runOneFile(inputfile, outputrootfile):
             "run",
             "lumi",
             "event",
-            "puppiMET_pt",
-            "puppiMET_phi",
-            "puppiMET_phiJERDown",
-            "puppiMET_phiJERUp",
-            "puppiMET_phiJESDown",
-            "puppiMET_phiJESUp",
-            "puppiMET_phiUnclusteredDown",
-            "puppiMET_phiUnclusteredUp",
-            "puppiMET_ptJERDown",
-            "puppiMET_ptJERUp",
-            "puppiMET_ptJESDown",
-            "puppiMET_ptJESUp",
-            "puppiMET_ptUnclusteredDown",
-            "puppiMET_ptUnclusteredUp",
-            "puppiMET_sumEt",
             "Res_lead_bjet_pt",
             "Res_lead_bjet_eta",
             "Res_lead_bjet_phi",
@@ -106,24 +91,6 @@ def runOneFile(inputfile, outputrootfile):
             "Res_SecondJet_PtOverM",
             "lead_mvaID",
             "sublead_mvaID",
-            "Res_DeltaR_j1g1",
-            "Res_DeltaR_j2g1",
-            "Res_DeltaR_j1g2",
-            "Res_DeltaR_j2g2",
-            "Res_M_X",
-            ## Adding other variables
-            # "pholead_PtOverM",
-            # "phosublead_PtOverM",
-            # "FirstJet_PtOverM",
-            # "SecondJet_PtOverM",
-            # "CosThetaStar_CS",
-            # "CosThetaStar_gg",
-            # "CosThetaStar_jj",
-            # "DeltaR_j1g1",
-            # "DeltaR_j2g1",
-            # "DeltaR_j1g2",
-            # "DeltaR_j2g2",
-            # "DeltaR_j2g2",
 
         ],
         step_size=10000,
@@ -135,21 +102,6 @@ def runOneFile(inputfile, outputrootfile):
                 "run": tree_["run"],
                 "lumi": tree_["lumi"],
                 "event": tree_["event"],
-                "puppiMET_pt": tree_["puppiMET_pt"],
-                "puppiMET_phi": tree_["puppiMET_phi"],
-                "puppiMET_phiJERDown": tree_["puppiMET_phiJERDown"],
-                "puppiMET_phiJERUp": tree_["puppiMET_phiJERUp"],
-                "puppiMET_phiJESDown": tree_["puppiMET_phiJESDown"],
-                "puppiMET_phiJESUp": tree_["puppiMET_phiJESUp"],
-                "puppiMET_phiUnclusteredDown": tree_["puppiMET_phiUnclusteredDown"],
-                "puppiMET_phiUnclusteredUp": tree_["puppiMET_phiUnclusteredUp"],
-                "puppiMET_ptJERDown": tree_["puppiMET_ptJERDown"],
-                "puppiMET_ptJERUp": tree_["puppiMET_ptJERUp"],
-                "puppiMET_ptJESDown": tree_["puppiMET_ptJESDown"],
-                "puppiMET_ptJESUp": tree_["puppiMET_ptJESUp"],
-                "puppiMET_ptUnclusteredDown": tree_["puppiMET_ptUnclusteredDown"],
-                "puppiMET_ptUnclusteredUp": tree_["puppiMET_ptUnclusteredUp"],
-                "puppiMET_sumEt": tree_["puppiMET_sumEt"],
                 "lead_bjet_pt": tree_["Res_lead_bjet_pt"],
                 "lead_bjet_eta": tree_["Res_lead_bjet_eta"],
                 "lead_bjet_phi": tree_["Res_lead_bjet_phi"],
@@ -184,15 +136,6 @@ def runOneFile(inputfile, outputrootfile):
                 "SecondJet_PtOverM": tree_["Res_SecondJet_PtOverM"],
                 "lead_pho_mvaID": tree_["lead_mvaID"],
                 "sublead_pho_mvaID": tree_["sublead_mvaID"],
-                "DeltaR_j1g1": tree_["Res_DeltaR_j1g1"],
-                "DeltaR_j2g1": tree_["Res_DeltaR_j2g1"],
-                "DeltaR_j1g2": tree_["Res_DeltaR_j1g2"],
-                "DeltaR_j2g2": tree_["Res_DeltaR_j2g2"],
-                "bbgg_mass": tree_["Res_HHbbggCandidate_mass"],
-                "bbgg_pt": tree_["Res_HHbbggCandidate_pt"],
-                "bbgg_eta": tree_["Res_HHbbggCandidate_eta"],
-                "bbgg_phi": tree_["Res_HHbbggCandidate_phi"],
-                "MX": tree_["Res_M_X"],
 
             },
             depth_limit=1,
@@ -272,28 +215,6 @@ def runOneFile(inputfile, outputrootfile):
         cms_events["mask_crbbantigg"] = get_mask_crbbantigg(cms_events)
         cms_events["mask_crantibbgg"] = get_mask_crantibbgg(cms_events)
         cms_events["get_mask_crantibbantigg"] = get_mask_crantibbantigg(cms_events)
-
-        # Adding puppi MET and associated variables
-        out_events["puppiMET_pt"] = cms_events["puppiMET_pt"]
-        out_events["puppiMET_phi"] = cms_events["puppiMET_phi"]
-
-        out_events["puppiMET_phiJERDown"] = cms_events["puppiMET_phiJERDown"]
-        out_events["puppiMET_phiJERUp"] = cms_events["puppiMET_phiJERUp"]
-        out_events["puppiMET_phiJESDown"] = cms_events["puppiMET_phiJESDown"]
-        out_events["puppiMET_phiJESUp"] = cms_events["puppiMET_phiJESUp"]
-        out_events["puppiMET_phiUnclusteredDown"] = cms_events[
-            "puppiMET_phiUnclusteredDown"
-        ]
-        out_events["puppiMET_phiUnclusteredUp"] = cms_events[
-            "puppiMET_phiUnclusteredUp"
-        ]
-        out_events["puppiMET_ptJERDown"] = cms_events["puppiMET_ptJERDown"]
-        out_events["puppiMET_ptJERUp"] = cms_events["puppiMET_ptJERUp"]
-        out_events["puppiMET_ptJESDown"] = cms_events["puppiMET_ptJESDown"]
-        out_events["puppiMET_ptJESUp"] = cms_events["puppiMET_ptJESUp"]
-        out_events["puppiMET_ptUnclusteredDown"] = cms_events["puppiMET_ptUnclusteredDown"]
-        out_events["puppiMET_ptUnclusteredUp"] = cms_events["puppiMET_ptUnclusteredUp"]
-        out_events["puppiMET_sumEt"] = cms_events["puppiMET_sumEt"]
         ###--------------
         out_events["lead_pho_pt"] = cms_events["lead_pho_pt"]
         # Adding new variable
@@ -388,12 +309,6 @@ def runOneFile(inputfile, outputrootfile):
         out_events["crantibbgg"] = cms_events["mask_crantibbgg"]
         out_events["crbbantigg"] = cms_events["mask_crbbantigg"]
 ## Adding deltaR(j,g)
-
-        out_events["DeltaR_j1g1"] = cms_events["DeltaR_j1g1"]
-        out_events["DeltaR_j2g1"] = cms_events["DeltaR_j2g1"]
-        out_events["DeltaR_j1g2"] = cms_events["DeltaR_j1g2"]
-        out_events["DeltaR_j2g2"] = cms_events["DeltaR_j2g2"]
-
         #---------------------------------------------------
         #---------------------------------------------------
         out_events["MX"] = cms_events["MX"]

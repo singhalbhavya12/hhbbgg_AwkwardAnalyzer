@@ -27,14 +27,6 @@ def getXsec(samplename):
         xsec = 0.00926
     elif "VHToGG" in samplename:
         xsec = 0.00545
-    elif "QCD_PT-30To40" in samplename:
-        xsec = 25950
-    elif "QCD_PT-30ToInf"  in samplename:
-        xsec = 252200
-    elif "QCD_PT-40ToInf"  in samplename:
-        xsec = 124700
-    elif "DDQCDGJET" in samplename:   # Data-driven bkg estiamtion
-        xsec = 1
     else:
         raise ValueError("cross-section not found")
     return xsec

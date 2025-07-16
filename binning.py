@@ -49,19 +49,6 @@ binning["preselection"] = {
     "sublead_pho_mvaID_WP80": [2, 0, 1],
     "lead_pho_mvaID": [20, -1, 1],
     "sublead_pho_mvaID": [20, -1, 1],
-    "puppiMET_pt": [20, 100, 200],
-    "puppiMET_phi":[10, -3.14, 3.14],
-    "puppiMET_phiJERDown":[10, -3.14, 100],
-    "puppiMET_phiJERUp":[100, -3.14, 3.14],
-    "puppiMET_phiJESDown":[100, -3.14, 3.14],
-    "puppiMET_phiJESUp":[100, -3.14, 3.14],
-    "puppiMET_phiUnclusteredDown":[100, -3.14, 3.14],
-    "puppiMET_phiUnclusteredUp":[100, -3.14, 3.14],
-    "puppiMET_phiJERDown":[100, -3.14, 3.14],
-    "puppiMET_ptJERDown":[100, 0, 100],
-    "puppiMET_ptJERUp":[100, 0, 100],
-    "puppiMET_ptJESDown":[100, 0, 100],
-    "puppiMET_ptJESUp":[100, 0, 100],
     "DeltaPhi_j1MET":[100,-3.14,3,14],
     "DeltaPhi_j2MET":[100,-3.14,3,14],
     "Res_chi_t0":[100,0,100],
@@ -74,25 +61,3 @@ binning["preselection"] = {
 
 binning["selection"] = copy.deepcopy(binning["preselection"])
 binning["srbbgg"] = copy.deepcopy(binning["preselection"])
-binning["srbbggMET"] = copy.deepcopy(binning["preselection"])
-met_variables = {"puppiMET_pt": [20, 100, 200],
-                 "puppiMET_phi":[10, -3.14, 3.14],
-                 "puppiMET_phiJERDown":[10, -3.14, 100],
-                 "puppiMET_phiJERUp":[100, -3.14, 3.14],
-                 "puppiMET_phiJESDown":[100, -3.14, 3.14],
-                 "puppiMET_phiJESUp":[100, -3.14, 3.14],
-                 "puppiMET_phiUnclusteredDown":[100, -3.14, 3.14],
-                 "puppiMET_phiUnclusteredUp":[100, -3.14, 3.14],
-                 "puppiMET_phiJERDown":[100, -3.14, 3.14],
-                 "puppiMET_ptJERDown":[100, 0, 100],
-                 "puppiMET_ptJERUp":[100, 0, 100],
-                 "puppiMET_ptJESDown":[100, 0, 100],
-                 "puppiMET_ptJESUp":[100, 0, 100],
-                     }
-binning["srbbggMET"].update(met_variables)
-binning["crantibbgg"] = copy.deepcopy(binning["preselection"])
-binning["crbbantigg"] = copy.deepcopy(binning["preselection"])
-binning["crantibbantigg"] = copy.deepcopy(binning["preselection"])
-binning["sideband"] = copy.deepcopy(binning["preselection"])
-binning["idmva_sideband"] = copy.deepcopy(binning["preselection"])
-binning["idmva_presel"] = copy.deepcopy(binning["preselection"])

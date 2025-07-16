@@ -1,6 +1,6 @@
 import copy
 
-regions = ["preselection", "selection", "srbbgg", "srbbggMET", "crantibbgg", "crbbantigg", "crantibbantigg", "sideband", "idmva_sideband","idmva_presel"]
+regions = ["preselection"]
 vardict = {
     # dibjet 
     "dibjet_mass": "dibjet_mass",
@@ -51,19 +51,6 @@ vardict = {
     # bbgg mass
     "diphoton_bbgg_mass": "diphoton_bbgg_mass",
     "dibjet_bbgg_mass": "dibjet_bbgg_mass",
-    # puppi 
-    "puppiMET_pt": "puppiMET_pt",
-    "puppiMET_phi": "puppiMET_phi",
-    "puppiMET_phiJERDown": "puppiMET_phiJERDown",
-    "puppiMET_phiJERUp": "puppiMET_phiJERUp",
-    "puppiMET_phiJESDown": "puppiMET_phiJESDown",
-    "puppiMET_phiJESUp": "puppiMET_phiJESUp",
-    "puppiMET_phiUnclusteredDown": "puppiMET_phiUnclusteredDown",
-    "puppiMET_phiUnclusteredUp": "puppiMET_phiUnclusteredUp",
-    "puppiMET_ptJERDown":"puppiMET_ptJERDown",
-    "puppiMET_ptJERUp":"puppiMET_ptJERUp",
-    "puppiMET_ptJESDown":"puppiMET_ptJESDown",
-    "puppiMET_ptJESUp":"puppiMET_ptJESUp",
     # WP
     "lead_pho_mvaID_WP90":"lead_pho_mvaID_WP90",
     "lead_pho_mvaID_WP80":"lead_pho_mvaID_WP80",
@@ -72,15 +59,6 @@ vardict = {
     # mvaID
     "lead_pho_mvaID":"lead_pho_mvaID",
     "sublead_pho_mvaID":"sublead_pho_mvaID",
-    # other variables added from Non-Resonant(Explain these?)
-    "DeltaPhi_j1MET":"DeltaPhi_j1MET",
-    "DeltaPhi_j2MET":"DeltaPhi_j2MET",
-    "Res_chi_t0":"Res_chi_t0",
-    "Res_chi_t1":"Res_chi_t1",
-    "lepton1_mvaID":"lepton1_mvaID",
-    "lepton1_pt":"lepton1_pt",
-    "lepton1_pfIsoId":"lepton1_pfIsoId",
-    "n_jets":"n_jets",  
 }
 
 variables_common = {
@@ -131,26 +109,6 @@ variables_common = {
         "sublead_pho_mvaID_WP80",
         "lead_pho_mvaID",
         "sublead_pho_mvaID",
-        "puppiMET_pt", 
-        "puppiMET_phi", 
-        "puppiMET_phiJERDown",
-        "puppiMET_phiJERUp",
-        "puppiMET_phiJESDown", 
-        "puppiMET_phiJESUp", 
-        "puppiMET_phiUnclusteredDown", 
-        "puppiMET_phiUnclusteredUp",
-        "puppiMET_ptJERDown", 
-        "puppiMET_ptJERUp", 
-        "puppiMET_ptJESDown", 
-        "puppiMET_ptJESUp",
-        "DeltaPhi_j1MET",
-        "DeltaPhi_j2MET",
-        "Res_chi_t0",
-        "Res_chi_t1",
-        "lepton1_mvaID",
-        "lepton1_pt",
-        "lepton1_pfIsoId",
-        "n_jets"
     ]
 }
 
@@ -158,5 +116,3 @@ for ireg in regions:
     print(ireg)
     variables_common[ireg] = copy.deepcopy(variables_common["preselection"])
 
-srbbggMET = ["puppiMET_pt", "puppiMET_phi", "puppiMET_phiJERDown", "puppiMET_phiJERUp","puppiMET_phiJESDown", "puppiMET_phiJESUp", "puppiMET_phiUnclusteredDown", "puppiMET_phiUnclusteredUp", "puppiMET_ptJERDown", "puppiMET_ptJERUp", "puppiMET_ptJESDown", "puppiMET_ptJESUp"]
-variables_common["srbbggMET"] = variables_common["srbbggMET"] + srbbggMET

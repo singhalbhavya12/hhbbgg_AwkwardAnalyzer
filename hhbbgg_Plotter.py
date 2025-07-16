@@ -184,107 +184,6 @@ def stack1d_histograms(
         )
         mc_stack.plot(ax=ax, stack=True, histtype="fill", flow="sum", sort="yield")
 
-        # Plot signal histograms
-        #        if "srbbgg" in hist_name or "srbbggMET" in hist_name:
-        #            for signal_sample in signal_samples:
-        #                signal_histogram = get_histogram(
-        #                    uproot_loaded_filename, f"{signal_sample}/{hist_name}"
-        #                )
-        #                signal_histogram.plot(
-        #                    ax=ax,
-        #                    histtype="step",
-        #                    yerr=True,
-        #                    xerr=True,
-        #                    label=legend_dict[signal_sample],
-        #                    color="red",
-        #                )
-        #
-        #            region_name = r'sr: $b\bar{b}\gamma\gamma$' if "srbbgg" in hist_name else r'sr: $b\bar{b}\gamma\gamma$(MET)'
-        #
-        #            ax.text(
-        #            x=ax.get_xlim()[0] + 0.05 * (ax.get_xlim()[1] - ax.get_xlim()[0]),
-        #            # y=ax.get_ylim()[1] - 0.05 * (ax.get_ylim()[1] - ax.get_ylim()[0]),
-        #            y = 1e8*0.20,
-        #            s=region_name,
-        #            fontsize=25,
-        #            ha='left',
-        #            va='top',
-        #            bbox=dict(facecolor='white', alpha=1)
-        #             )
-        #
-        #        # for control regions
-        #        if "crantibbgg" in hist_name or "crbbantigg" in hist_name:
-        #            region_name = r'cr: anti$b\bar{b}\gamma\gamma$' if "crantibbgg" in hist_name else r'cr: $b\bar{b}anti\gamma\gamma$'
-        #
-        #            ax.text(
-        #            x=ax.get_xlim()[0] + 0.05 * (ax.get_xlim()[1] - ax.get_xlim()[0]),
-        #            # y=ax.get_ylim()[1] - 0.05 * (ax.get_ylim()[1] - ax.get_ylim()[0]),
-        #            y = 1e8*0.20,
-        #            s=region_name,
-        #            fontsize=20,
-        #            ha='left',
-        #            va='top',
-        #            bbox=dict(facecolor='white', alpha=1)
-        #             )
-        #
-
-        text_srbbgg = "Pass medium Btag\nPass tight photonID "
-        text_srbbggMET = "Pass medium Btag\nPass tight photonID"
-        text_crantibbgg = "Fail Medium Btag\nPass tight photonID"
-        text_crbbantigg = "Pass Medium Btag\nPass loose photonID\nfail tight photonID "
-        text_crantibbantigg = "Fail Medium Btag\nFail loose photonID\nfail tight photonID " 
-        text_sideband = "Fail Medium Btag\nFail loose photonID\nfail tight photonID " 
-        
-        
-        if "srbbgg" in hist_name:
-            region_name = r"sr: $b\bar{b}\gamma\gamma$"
-            additional_text = text_srbbgg
-        elif "srbbggMET" in hist_name:
-            region_name = r"sr: $b\bar{b}\gamma\gamma$+MET"
-            additional_text = text_srbbggMET
-        elif "crantibbgg" in hist_name:
-            region_name = r"cr: anti$b\bar{b}\gamma\gamma$"
-            additional_text = text_crantibbgg
-        elif "crbbantigg" in hist_name:
-            region_name = r"cr: $b\bar{b}anti\gamma\gamma$"
-            additional_text = text_crbbantigg
-        elif "crantibbantigg" in hist_name:
-            region_name = r"cr: anti$b\bar{b}anti\gamma\gamma$"
-            additional_text = text_crantibbantigg
-        elif "sideband" in hist_name:
-            region_name = r"cr: anti$b\bar{b}anti\gamma\gamma$"
-            additional_text = text_sideband
-        else:
-            region_name = None
-            additional_text = None
-
-        if region_name and additional_text:
-            combined_text = f"{region_name}\n{additional_text}"
-            ax.text(
-                x=ax.get_xlim()[0] + 0.02 * (ax.get_xlim()[1] - ax.get_xlim()[0]),
-                y=1e8 * 0.20,
-                s=combined_text,
-                fontsize=15,
-                ha="left",
-                va="top",
-                bbox=dict(facecolor="white", alpha=1, edgecolor="none"),
-            )
-
-        # plot signal histogram
-        if "srbbgg" in hist_name or "srbbggMET" in hist_name:
-            for signal_sample in signal_samples:
-                signal_histogram = get_histogram(
-                    uproot_loaded_filename, f"{signal_sample}/{hist_name}"
-                )
-                signal_histogram.plot(
-                    ax=ax,
-                    histtype="step",
-                    yerr=True,
-                    xerr=True,
-                    label=legend_dict[signal_sample],
-                    color="red",
-                )
-
         # Plot ratio plot
         ratio, error = get_ratio(data_histogram, sum_histograms(mc_stack))
         if "dibjet_mass" in hist_name or "diphoton_mass" in hist_name:
@@ -381,58 +280,6 @@ def main():
         "NMSSM_X500_Y150",
      ]
 
-    #signal_samples = [
-    #    "GluGluToHH",
-    #    "NMSSM_X300_Y60",
-    #    "NMSSM_X300_Y70",
-    #    "NMSSM_X300_Y80",
-    #    "NMSSM_X300_Y90",
-    #    "NMSSM_X300_Y95",
-    #    "NMSSM_X300_Y100",
-    #    "NMSSM_X300_Y125",
-    #    "NMSSM_X400_Y60",
-    #    "NMSSM_X400_Y70",
-    #    "NMSSM_X400_Y80",
-    #    "NMSSM_X400_Y90",
-    #    "NMSSM_X400_Y95",
-    #    "NMSSM_X400_Y100",
-    #    "NMSSM_X400_Y125",
-    #    "NMSSM_X500_Y60",
-    #    "NMSSM_X500_Y70",
-    #    "NMSSM_X500_Y80",
-    #    "NMSSM_X500_Y90",
-    #    "NMSSM_X500_Y95",
-    #    "NMSSM_X500_Y100",
-    #    "NMSSM_X500_Y125",
-    #    "NMSSM_X550_Y60",
-    #    "NMSSM_X550_Y70",
-    #    "NMSSM_X550_Y80",
-    #    "NMSSM_X550_Y90",
-    #    "NMSSM_X550_Y95",
-    #    "NMSSM_X550_Y100",
-    #    "NMSSM_X550_Y125",
-    #    "NMSSM_X600_Y60",
-    #    "NMSSM_X600_Y70",
-    #    "NMSSM_X600_Y80",
-    #    "NMSSM_X600_Y90",
-    #    "NMSSM_X600_Y95",
-    #    "NMSSM_X600_Y100",
-    #    "NMSSM_X600_Y125",
-    #    "NMSSM_X650_Y60",
-    #    "NMSSM_X650_Y70",
-    #    "NMSSM_X650_Y80",
-    #    "NMSSM_X650_Y90",
-    #    "NMSSM_X650_Y95",
-    #    "NMSSM_X650_Y100",
-    #    "NMSSM_X650_Y125",
-    #    "NMSSM_X700_Y60",
-    #    "NMSSM_X700_Y70",
-    #    "NMSSM_X700_Y80",
-    #    "NMSSM_X700_Y90",
-    #    "NMSSM_X700_Y95",
-    #    "NMSSM_X700_Y100",
-    #    "NMSSM_X700_Y125"
-    #]
 
     # Dictionary for legends
     legend_dict = {
@@ -450,60 +297,6 @@ def main():
         "NMSSM_X500_Y100": r"$NMSSM\_X_{500}\_Y_{100} \times 10$",
         "NMSSM_X500_Y125": r"$NMSSM\_X_{500}\_Y_{125} \times 10$",
         "NMSSM_X500_Y150": r"$NMSSM\_X_{500}\_Y_{150} \times 10$",
-        # QCD sample legends
-        # "QCD_PT-30to40": r"$QCD+P_T(30to40)$",
-        # "QCD_PT-30toInf": r"$QCD+P_T(30toInf)$",
-        # "QCD_PT-40toInf": r"$QCD+P_T(40toInf)$",
-        # NMSSM samples legends
-        #"NMSSM_X300_Y60": r"$NMSSM\_X300\_Y60$",
-        #"NMSSM_X300_Y70": r"$NMSSM\_X300\_Y70$",
-        #"NMSSM_X300_Y80": r"$NMSSM\_X300\_Y80$",
-        #"NMSSM_X300_Y90": r"$NMSSM\_X300\_Y90$",
-        #"NMSSM_X300_Y95": r"$NMSSM\_X300\_Y95$",
-        #"NMSSM_X300_Y100": r"$NMSSM\_X300\_Y100$",
-        #"NMSSM_X300_Y125": r"$NMSSM\_X300\_Y125$",
-        #"NMSSM_X400_Y60": r"$NMSSM\_X400\_Y60$",
-        #"NMSSM_X400_Y70": r"$NMSSM\_X400\_Y70$",
-        #"NMSSM_X400_Y80": r"$NMSSM\_X400\_Y80$",
-        #"NMSSM_X400_Y90": r"$NMSSM\_X400\_Y90$",
-        #"NMSSM_X400_Y95": r"$NMSSM\_X400\_Y95$",
-        #"NMSSM_X400_Y100": r"$NMSSM\_X400\_Y100$",
-        #"NMSSM_X400_Y125": r"$NMSSM\_X400\_Y125$",
-        #"NMSSM_X500_Y60": r"$NMSSM\_X500\_Y60$",
-        #"NMSSM_X500_Y70": r"$NMSSM\_X500\_Y70$",
-        #"NMSSM_X500_Y80": r"$NMSSM\_X500\_Y80$",
-        #"NMSSM_X500_Y90": r"$NMSSM\_X500\_Y90$",
-        #"NMSSM_X500_Y95": r"$NMSSM\_X500\_Y95$",
-        #"NMSSM_X500_Y100": r"$NMSSM\_X500\_Y100$",
-        #"NMSSM_X500_Y125": r"$NMSSM\_X500\_Y125$",
-        #"NMSSM_X550_Y60": r"$NMSSM\_X550\_Y60$",
-        #"NMSSM_X550_Y70": r"$NMSSM\_X550\_Y70$",
-        #"NMSSM_X550_Y80": r"$NMSSM\_X550\_Y80$",
-        #"NMSSM_X550_Y90": r"$NMSSM\_X550\_Y90$",
-        #"NMSSM_X550_Y95": r"$NMSSM\_X550\_Y95$",
-        #"NMSSM_X550_Y100": r"$NMSSM\_X550\_Y100$",
-        #"NMSSM_X550_Y125": r"$NMSSM\_X550\_Y125$",
-        #"NMSSM_X600_Y60": r"$NMSSM\_X600\_Y60$",
-        #"NMSSM_X600_Y70": r"$NMSSM\_X600\_Y70$",
-        #"NMSSM_X600_Y80": r"$NMSSM\_X600\_Y80$",
-        #"NMSSM_X600_Y90": r"$NMSSM\_X600\_Y90$",
-        #"NMSSM_X600_Y95": r"$NMSSM\_X600\_Y95$",
-        #"NMSSM_X600_Y100": r"$NMSSM\_X600\_Y100$",
-        #"NMSSM_X600_Y125": r"$NMSSM\_X600\_Y125$",
-        #"NMSSM_X650_Y60": r"$NMSSM\_X650\_Y60$",
-        #"NMSSM_X650_Y70": r"$NMSSM\_X650\_Y70$",
-        #"NMSSM_X650_Y80": r"$NMSSM\_X650\_Y80$",
-        #"NMSSM_X650_Y90": r"$NMSSM\_X650\_Y90$",
-        #"NMSSM_X650_Y95": r"$NMSSM\_X650\_Y95$",
-        #"NMSSM_X650_Y100": r"$NMSSM\_X650\_Y100$",
-        #"NMSSM_X650_Y125": r"$NMSSM\_X650\_Y125$",
-        #"NMSSM_X700_Y60": r"$NMSSM\_X700\_Y60$",
-        #"NMSSM_X700_Y70": r"$NMSSM\_X700\_Y70$",
-        #"NMSSM_X700_Y80": r"$NMSSM\_X700\_Y80$",
-        #"NMSSM_X700_Y90": r"$NMSSM\_X700\_Y90$",
-        #"NMSSM_X700_Y95": r"$NMSSM\_X700\_Y95$",
-        #"NMSSM_X700_Y100": r"$NMSSM\_X700\_Y100$",
-        #"NMSSM_X700_Y125": r"$NMSSM\_X700\_Y125$",
     }
 
     # List of regions names
@@ -570,18 +363,7 @@ def main():
         "sublead_pho_mvaID",
     ]
 
-    specific_variable_names = [
-        "puppiMET_pt",
-        "puppiMET_phi",
-        "puppiMET_phiJERDown", "puppiMET_phiJERUp", "puppiMET_phiJESDown",
-        "puppiMET_phiJESUp", "puppiMET_phiUnclusteredDown",
-        "puppiMET_phiUnclusteredUp", "puppiMET_ptJERDown",
-        "puppiMET_ptJERUp", "puppiMET_ptJESDown",
-        "puppiMET_ptJESUp", "puppiMET_ptUnclusteredDown",
-        "puppiMET_ptUnclusteredUp", "puppiMET_sumEt"
-    ]
-
-    specific_regions = ["preselection","srbbggMET"]
+    specific_regions = ["preselection"]
 
     histogram_names = [
         f"{region}-{variable_name}"
@@ -639,17 +421,6 @@ def main():
         "sublead_pt_over_dibjet_mass": r"sublead $p_T(j)/M_{b\bar{b}}$",
         "diphoton_bbgg_mass": r"$p_T^{\gamma\gamma}/M_{b\bar{b}\gamma\gamma}$",
         "dibjet_bbgg_mass": r"$p_T^{b\bar{b}}/m_{b\bar{b}\gamma\gamma}$",
-        "puppiMET_pt": r"puppi $p_T^{miss}$ [GeV]",
-        "puppiMET_phi": r"puppi $\phi^{miss}$",
-        "puppiMET_phiJERDown": r"puppi $\phi^{JERDown}$",
-        "puppiMET_phiJERUp": r"puppi $\phi^{JERUp}$",
-        "puppiMET_phiJESDown": r"puppi $\phi^{JESDown}$",
-        "puppiMET_phiUnclusteredDown": r"puppi $\phi^{UnclusterDown}$",
-        "puppiMET_phiUnclusteredUp": r"puppi $\phi^{UnclusterUp}$",
-        "puppiMET_ptJERDown": r"puppi $p_T^{JERDown}$ [GeV]",
-        "puppiMET_ptJERUp": r"puppi $p_T^{JERUp}$ [GeV]",
-        "puppiMET_ptJESDown": r"puppi $p_T^{JESDown}$ [GeV]",
-        "puppiMET_ptJESUp": r"puppi $p_T^{JESUp}$ [GeV]",
         "lead_pho_mvaID_WP90": r"lead_PhoMVAID90",
         "sublead_pho_mvaID_WP90": r"sublead_PhoMVAID90",
         "lead_pho_mvaID_WP80": r"lead_PhoMVAID80",
