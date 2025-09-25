@@ -9,7 +9,7 @@ def getXsec(samplename):
     BR_HTobb = 5.824e-01
     BR_HTogg = 2.270e-03  # https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageBR
     #if samplename in nmssm_samples:
-    if "NMSSM_X" in samplename:
+    if "NMSSM_MX" in samplename:
         xsec = 1.0
     elif "GluGluToHH" in samplename:
         xsec = 1.0
