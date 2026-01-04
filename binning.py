@@ -71,10 +71,23 @@ binning["preselection"] = {
     "lepton1_pt":[100,0,100],
     "lepton1_pfIsoId":[100,0,100],
     "n_jets":[100,0,100],
+    #Dijet variables
+    'Res_dijet_mass': [33,0,180],
+    'Res_dijet_mass_DNNreg': [33,0,180],
+    'Res_DNNpair_dijet_mass': [33,0,180],
+    'Res_DNNpair_dijet_mass_DNNreg': [33,0,180],
+    'nonRes_dijet_mass': [33,0,180],
+    'nonRes_dijet_mass_DNNreg': [33,0,180],
+    'nonResReg_dijet_mass': [33,0,180],
+    'nonResReg_dijet_mass_DNNreg': [33,0,180],
+    'nonResReg_DNNpair_dijet_mass': [33,0,180],
+    'nonResReg_DNNpair_dijet_mass_DNNreg': [33,0,180],
+    'VBF_dijet_mass': [33,0,180]
 }
 
 binning["selection"] = copy.deepcopy(binning["preselection"])
 binning["srbbgg"] = copy.deepcopy(binning["preselection"])
+binning["bbgg"] = copy.deepcopy(binning["preselection"])
 binning["srbbggMET"] = copy.deepcopy(binning["preselection"])
 met_variables = {"puppiMET_pt": [20, 100, 200],
                  "puppiMET_phi":[10, -3.14, 3.14],

@@ -1,6 +1,6 @@
 import copy
 
-regions = ["preselection", "selection", "srbbgg", "srbbggMET", "crantibbgg", "crbbantigg", "crantibbantigg", "sideband", "idmva_sideband","idmva_presel"]
+regions = ["preselection", "selection", "bbgg", "srbbgg", "srbbggMET", "crantibbgg", "crbbantigg", "crantibbantigg", "sideband", "idmva_sideband","idmva_presel"]
 vardict = {
     # dibjet 
     "dibjet_mass": "dibjet_mass",
@@ -82,6 +82,18 @@ vardict = {
     "lepton1_pt":"lepton1_pt",
     "lepton1_pfIsoId":"lepton1_pfIsoId",
     "n_jets":"n_jets",  
+    #Dijet variables
+    "Res_dijet_mass":"Res_dijet_mass",
+    "Res_dijet_mass_DNNreg":"Res_dijet_mass_DNNreg",
+    'Res_DNNpair_dijet_mass': "Res_DNNpair_dijet_mass",
+    'Res_DNNpair_dijet_mass_DNNreg': "Res_DNNpair_dijet_mass_DNNreg",
+    'nonRes_dijet_mass': "nonRes_dijet_mass",
+    'nonRes_dijet_mass_DNNreg':"nonRes_dijet_mass_DNNreg",
+    'nonResReg_dijet_mass':"nonResReg_dijet_mass",
+    'nonResReg_dijet_mass_DNNreg': "nonResReg_dijet_mass_DNNreg",
+    'nonResReg_DNNpair_dijet_mass': "nonResReg_DNNpair_dijet_mass",
+    'nonResReg_DNNpair_dijet_mass_DNNreg': "nonResReg_DNNpair_dijet_mass_DNNreg",
+    'VBF_dijet_mass': "VBF_dijet_mass"
 }
 
 variables_common = {
@@ -152,7 +164,19 @@ variables_common = {
         "lepton1_mvaID",
         "lepton1_pt",
         "lepton1_pfIsoId",
-        "n_jets"
+        "n_jets",
+        #Dijet variables
+        "Res_dijet_mass",
+        "Res_dijet_mass_DNNreg",
+        'Res_DNNpair_dijet_mass',
+        'Res_DNNpair_dijet_mass_DNNreg',
+        'nonRes_dijet_mass',
+        'nonRes_dijet_mass_DNNreg',
+        'nonResReg_dijet_mass',
+        'nonResReg_dijet_mass_DNNreg',
+        'nonResReg_DNNpair_dijet_mass',
+        'nonResReg_DNNpair_dijet_mass_DNNreg',
+        'VBF_dijet_mass'
     ]
 }
 

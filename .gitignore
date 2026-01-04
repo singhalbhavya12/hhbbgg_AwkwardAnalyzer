@@ -1,17 +1,67 @@
-**/__pycache__/
-**.pyc
-**.DS_Store
-analysis.sh
-stack_plots/**/*.pdf
-stack_plots/**/*.png
-outputfiles/*.root
-outputfiles/*.ipynb
-**.ipynb_checkpoints
-**.vscode
-bdt/notebook/**/*.pt
-bdt/notebook/**/*.pth
-stats_study/CMSSW_*/
+# **/__pycache__/
+# **.pyc
+# **.DS_Store
+# analysis.sh
+# stack_plots/**/*.pdf
+# stack_plots/**/*.png
+# outputfiles/*.root
+# outputfiles/*.ipynb
+# **.ipynb_checkpoints
+# **.vscode
+# bdt/notebook/**/*.pt
+# bdt/notebook/**/*.pth
+# stats_study/CMSSW_*/
+# stats_study/datacards/CMSSW*
+# stats_study/CMSSW*
+# /ML_Application/parametrized_DNN/inference_outputs/*
+# finalfits/CMSSW*
+
+
+# --------------------
+# Python
+# --------------------
+__pycache__/
+*.pyc
+
+# --------------------
+# macOS / editors
+# --------------------
+.DS_Store
+.vscode/
+
+# --------------------
+# Jupyter
+# --------------------
+.ipynb_checkpoints/
+*.ipynb
+
+# --------------------
+# Analysis outputs
+# --------------------
+*.root
+*.pdf
+*.png
+*.log
+
+# --------------------
+# Project-specific outputs
+# --------------------
+outputfiles/
+stack_plots/
+finalfits/
+stats_study/CMSSW*/
 stats_study/datacards/CMSSW*
-stats_study/CMSSW*
-/ML_Application/parametrized_DNN/inference_outputs/*
-finalfits/CMSSW*
+ML_Application/parametrized_DNN/inference_outputs/
+Plots/
+Y/
+outputfiles_old/
+# --------------------
+# ML artifacts
+# --------------------
+*.pt
+*.pth
+
+# --------------------
+# Shell scripts (optional)
+# --------------------
+analysis.sh
