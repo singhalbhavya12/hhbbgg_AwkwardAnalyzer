@@ -82,3 +82,6 @@ stats_study/**/*.so
 
 # git diff
 *.patch
+
+# *.png
+# *.pdf

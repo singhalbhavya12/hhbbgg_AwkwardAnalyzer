@@ -1,0 +1,187 @@
+{
+  "features": [
+    "reduced_invariant_mX",
+    "Res_dijet_mass_DNNreg"
+  ],
+  "feature_set": "ATLAS",
+  "mass_category": "low",
+  "active_years": [
+    "2022preEE",
+    "2022postEE"
+  ],
+  "signal_label": "low_2022preEE_2022postEE_feat-ATLAS",
+  "runtime_seconds": 5501.883652572986,
+  "scaler_mean": [
+    386.0873138235402,
+    146.96087266774973
+  ],
+  "scaler_scale": [
+    213.746125971918,
+    142.7235733383313
+  ],
+  "signal_points": [
+    {
+      "MX": 240,
+      "MY": 50
+    },
+    {
+      "MX": 240,
+      "MY": 60
+    },
+    {
+      "MX": 240,
+      "MY": 70
+    },
+    {
+      "MX": 240,
+      "MY": 80
+    },
+    {
+      "MX": 240,
+      "MY": 90
+    },
+    {
+      "MX": 240,
+      "MY": 95
+    },
+    {
+      "MX": 240,
+      "MY": 100
+    },
+    {
+      "MX": 280,
+      "MY": 50
+    },
+    {
+      "MX": 280,
+      "MY": 60
+    },
+    {
+      "MX": 280,
+      "MY": 70
+    },
+    {
+      "MX": 280,
+      "MY": 80
+    },
+    {
+      "MX": 280,
+      "MY": 90
+    },
+    {
+      "MX": 280,
+      "MY": 95
+    },
+    {
+      "MX": 280,
+      "MY": 100
+    },
+    {
+      "MX": 300,
+      "MY": 50
+    },
+    {
+      "MX": 300,
+      "MY": 60
+    },
+    {
+      "MX": 300,
+      "MY": 70
+    },
+    {
+      "MX": 300,
+      "MY": 80
+    },
+    {
+      "MX": 300,
+      "MY": 90
+    },
+    {
+      "MX": 300,
+      "MY": 95
+    },
+    {
+      "MX": 300,
+      "MY": 100
+    },
+    {
+      "MX": 320,
+      "MY": 50
+    },
+    {
+      "MX": 320,
+      "MY": 60
+    },
+    {
+      "MX": 320,
+      "MY": 70
+    },
+    {
+      "MX": 320,
+      "MY": 80
+    },
+    {
+      "MX": 320,
+      "MY": 90
+    },
+    {
+      "MX": 320,
+      "MY": 95
+    },
+    {
+      "MX": 320,
+      "MY": 100
+    },
+    {
+      "MX": 350,
+      "MY": 50
+    },
+    {
+      "MX": 350,
+      "MY": 60
+    },
+    {
+      "MX": 350,
+      "MY": 70
+    },
+    {
+      "MX": 350,
+      "MY": 80
+    },
+    {
+      "MX": 350,
+      "MY": 90
+    },
+    {
+      "MX": 350,
+      "MY": 95
+    },
+    {
+      "MX": 350,
+      "MY": 100
+    }
+  ],
+  "weighted_auc": 0.7804883739046127,
+  "unweighted_auc": 0.6805714786489322,
+  "n_signal": 988314,
+  "n_background": 3775922,
+  "best_epoch": 98,
+  "architecture": {
+    "hidden_layers": [
+      32,
+      16
+    ],
+    "dropout": 0.2,
+    "batch_norm": false,
+    "activation": "ReLU"
+  },
+  "training_params": {
+    "batch_size": 1024,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 200,
+    "early_stopping": 20,
+    "lr_scheduler_factor": 0.5,
+    "lr_scheduler_patience": 10
+  }
+}

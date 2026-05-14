@@ -1,0 +1,126 @@
+{
+  "features": [
+    "Res_CosThetaStar_jj",
+    "Res_CosThetaStar_gg",
+    "Res_CosThetaStar_CS",
+    "Res_DeltaR_jg_min",
+    "Res_DeltaR_j1g1",
+    "Res_DeltaR_j1g2",
+    "Res_DeltaR_j2g1",
+    "Res_DeltaR_j2g2",
+    "lead_mvaID",
+    "sublead_mvaID",
+    "Res_lead_bjet_btagPNetB",
+    "Res_sublead_bjet_btagPNetB",
+    "lead_energyErr",
+    "sublead_energyErr",
+    "sigma_m_over_m",
+    "Res_lead_bjet_PNetRegPtRawRes",
+    "Res_sublead_bjet_PNetRegPtRawRes",
+    "Res_pholead_PtOverM",
+    "Res_phosublead_PtOverM",
+    "Res_FirstJet_PtOverM",
+    "Res_SecondJet_PtOverM",
+    "Res_dijet_mass",
+    "pt_jj_over_M_jjgg",
+    "pt_gg_over_M_jjgg"
+  ],
+  "scaler_mean": [
+    0.000409057635367906,
+    -0.00056758004932661,
+    0.0010230100781574356,
+    1.3736846841289092,
+    2.633517546535631,
+    2.2127415108966786,
+    2.3547389895435957,
+    2.322828266270315,
+    0.6912104091555905,
+    0.6467124587897876,
+    0.0910593715557216,
+    0.08350772385642781,
+    2.659597637153892,
+    2.0275111968115316,
+    0.011149224006513678,
+    0.13149359660358972,
+    0.1783933941883087,
+    0.696425271357927,
+    0.39284454908116784,
+    0.7859671696049199,
+    0.3975153079223222,
+    147.62167649967876,
+    0.20417190960009593,
+    0.19885627998942415
+  ],
+  "scaler_scale": [
+    0.6570170773952346,
+    0.5172996832714517,
+    0.7373243765874432,
+    0.6312293903739516,
+    0.8773503418377366,
+    0.9651650792293403,
+    0.9671502419794679,
+    0.9619038339014313,
+    0.36962164347340204,
+    0.4082581795647813,
+    0.21202283044130504,
+    0.18622480385328632,
+    4.011401795064073,
+    2.985033612058631,
+    0.009968341993970823,
+    0.059512751481159996,
+    0.07151520564212516,
+    0.3026274200058211,
+    0.12005173089325191,
+    0.5870841540977316,
+    0.2558647487624961,
+    147.8571155301489,
+    0.13252756324354906,
+    0.12981754526884626
+  ],
+  "signal_points": [
+    {
+      "MX": 240,
+      "MY": 70
+    },
+    {
+      "MX": 280,
+      "MY": 70
+    },
+    {
+      "MX": 300,
+      "MY": 70
+    },
+    {
+      "MX": 320,
+      "MY": 70
+    },
+    {
+      "MX": 350,
+      "MY": 70
+    }
+  ],
+  "weighted_auc": 0.9807159783515993,
+  "unweighted_auc": 0.9565445020231306,
+  "n_signal": 35010,
+  "n_background": 918170,
+  "best_epoch": 122,
+  "architecture": {
+    "hidden_layers": [
+      128,
+      64,
+      32
+    ],
+    "dropout": 0.3,
+    "batch_norm": true,
+    "activation": "ReLU"
+  },
+  "training_params": {
+    "batch_size": 1024,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 200,
+    "early_stopping": 20,
+    "lr_scheduler_factor": 0.5,
+    "lr_scheduler_patience": 10
+  }
+}

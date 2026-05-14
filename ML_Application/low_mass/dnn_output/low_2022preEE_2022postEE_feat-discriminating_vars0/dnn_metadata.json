@@ -1,0 +1,246 @@
+{
+  "features": [
+    "lead_energyErr",
+    "lead_mvaID",
+    "Res_HHbbggCandidate_mass",
+    "Res_CosThetaStar_jj",
+    "Res_CosThetaStar_gg",
+    "Res_CosThetaStar_CS",
+    "Res_DeltaR_jg_min",
+    "Res_DeltaR_j1g1",
+    "Res_DeltaR_j1g2",
+    "Res_DeltaR_j2g1",
+    "Res_DeltaR_j2g2",
+    "Res_FirstJet_PtOverM",
+    "Res_lead_bjet_btagPNetB",
+    "Res_lead_bjet_PNetRegPtRawRes",
+    "Res_pholead_PtOverM",
+    "Res_phosublead_PtOverM",
+    "Res_SecondJet_PtOverM",
+    "Res_sublead_bjet_btagPNetB",
+    "Res_sublead_bjet_PNetRegPtRawRes",
+    "sigma_m_over_m",
+    "sublead_mvaID"
+  ],
+  "feature_set": "discriminating_vars",
+  "mass_category": "low",
+  "active_years": [
+    "2022preEE",
+    "2022postEE"
+  ],
+  "signal_label": "low_2022preEE_2022postEE_feat-discriminating_vars",
+  "runtime_seconds": 16766.747861244017,
+  "scaler_mean": [
+    2.516143832391558,
+    0.7025373284546647,
+    396.4426692408192,
+    -0.002712757461792648,
+    -0.0027400262609907438,
+    -0.00542130652765787,
+    1.3827415767762292,
+    2.604904216087253,
+    2.198281832043617,
+    2.340909354735624,
+    2.298104903290223,
+    0.8239769943432999,
+    0.18612349782605578,
+    0.1290052704000586,
+    0.7203047706995013,
+    0.4015570516107465,
+    0.4140884214080249,
+    0.1532166828778984,
+    0.17767094771178113,
+    0.010863684162356387,
+    0.6547130243963029
+  ],
+  "scaler_scale": [
+    3.8058595691722616,
+    0.3600221525912109,
+    232.3398898624999,
+    0.64906861001573,
+    0.5180014265886423,
+    0.7104890781015746,
+    0.6211451556503822,
+    0.8549203187558029,
+    0.9369322496762603,
+    0.9411620077520382,
+    0.9448143604649709,
+    0.599827681838515,
+    0.33144243661338363,
+    0.058818171945949065,
+    0.31927159715089265,
+    0.13174614505859586,
+    0.26442524969473535,
+    0.2884069690016961,
+    0.07196613648278859,
+    0.009887898819999168,
+    0.4028163515206859
+  ],
+  "signal_points": [
+    {
+      "MX": 240,
+      "MY": 50
+    },
+    {
+      "MX": 240,
+      "MY": 60
+    },
+    {
+      "MX": 240,
+      "MY": 70
+    },
+    {
+      "MX": 240,
+      "MY": 80
+    },
+    {
+      "MX": 240,
+      "MY": 90
+    },
+    {
+      "MX": 240,
+      "MY": 95
+    },
+    {
+      "MX": 240,
+      "MY": 100
+    },
+    {
+      "MX": 280,
+      "MY": 50
+    },
+    {
+      "MX": 280,
+      "MY": 60
+    },
+    {
+      "MX": 280,
+      "MY": 70
+    },
+    {
+      "MX": 280,
+      "MY": 80
+    },
+    {
+      "MX": 280,
+      "MY": 90
+    },
+    {
+      "MX": 280,
+      "MY": 95
+    },
+    {
+      "MX": 280,
+      "MY": 100
+    },
+    {
+      "MX": 300,
+      "MY": 50
+    },
+    {
+      "MX": 300,
+      "MY": 60
+    },
+    {
+      "MX": 300,
+      "MY": 70
+    },
+    {
+      "MX": 300,
+      "MY": 80
+    },
+    {
+      "MX": 300,
+      "MY": 90
+    },
+    {
+      "MX": 300,
+      "MY": 95
+    },
+    {
+      "MX": 300,
+      "MY": 100
+    },
+    {
+      "MX": 320,
+      "MY": 50
+    },
+    {
+      "MX": 320,
+      "MY": 60
+    },
+    {
+      "MX": 320,
+      "MY": 70
+    },
+    {
+      "MX": 320,
+      "MY": 80
+    },
+    {
+      "MX": 320,
+      "MY": 90
+    },
+    {
+      "MX": 320,
+      "MY": 95
+    },
+    {
+      "MX": 320,
+      "MY": 100
+    },
+    {
+      "MX": 350,
+      "MY": 50
+    },
+    {
+      "MX": 350,
+      "MY": 60
+    },
+    {
+      "MX": 350,
+      "MY": 70
+    },
+    {
+      "MX": 350,
+      "MY": 80
+    },
+    {
+      "MX": 350,
+      "MY": 90
+    },
+    {
+      "MX": 350,
+      "MY": 95
+    },
+    {
+      "MX": 350,
+      "MY": 100
+    }
+  ],
+  "weighted_auc": 0.9824425622618794,
+  "unweighted_auc": 0.9607084962346714,
+  "n_signal": 988314,
+  "n_background": 3775922,
+  "best_epoch": 180,
+  "architecture": {
+    "hidden_layers": [
+      256,
+      128,
+      64,
+      32
+    ],
+    "dropout": 0.4,
+    "batch_norm": true,
+    "activation": "ReLU"
+  },
+  "training_params": {
+    "batch_size": 1024,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 200,
+    "early_stopping": 20,
+    "lr_scheduler_factor": 0.5,
+    "lr_scheduler_patience": 10
+  }
+}

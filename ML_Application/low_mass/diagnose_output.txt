@@ -1,0 +1,325 @@
+================================================================================
+SIGNAL: Load sample
+================================================================================
+Loaded 6169 signal events
+
+BEFORE is_Res filter:
+
+Res_CosThetaStar_jj:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -2.588788, Std: 50.814366
+  Min: -999.000000, Max: 0.999804
+  Unique values: 6154
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    -0.340963: 1 (0.0%)
+    -0.971196: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_CosThetaStar_gg:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -2.600301, Std: 50.812748
+  Min: -999.000000, Max: 0.999909
+  Unique values: 6154
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    0.166841: 1 (0.0%)
+    0.012894: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_CosThetaStar_CS:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -2.606319, Std: 50.813039
+  Min: -999.000000, Max: 0.999774
+  Unique values: 6154
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    -0.948635: 1 (0.0%)
+    -0.739049: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_jg_min:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -1.225043, Std: 50.883109
+  Min: -999.000000, Max: 3.816573
+  Unique values: 6150
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    1.533874: 2 (0.0%)
+    1.063880: 2 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_j1g1:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -0.137564, Std: 50.940767
+  Min: -999.000000, Max: 5.299645
+  Unique values: 6151
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    2.902596: 2 (0.0%)
+    2.871352: 2 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_j1g2:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -0.467148, Std: 50.925206
+  Min: -999.000000, Max: 5.205481
+  Unique values: 6154
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    3.547884: 1 (0.0%)
+    2.479420: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_j2g1:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -0.321589, Std: 50.932925
+  Min: -999.000000, Max: 5.380234
+  Unique values: 6151
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    2.919670: 2 (0.0%)
+    1.830506: 2 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_j2g2:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -0.441745, Std: 50.927712
+  Min: -999.000000, Max: 5.309478
+  Unique values: 6153
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    2.344419: 2 (0.0%)
+    2.596541: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_lead_bjet_btagPNetB:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -1.960656, Std: 50.844413
+  Min: -999.000000, Max: 0.999512
+  Unique values: 2654
+  Top 3 values:
+    0.999512: 471 (7.6%)
+    0.999023: 447 (7.2%)
+    0.998535: 193 (3.1%)
+  Auto-correlation: 1.0000
+
+Res_sublead_bjet_btagPNetB:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -2.125074, Std: 50.836126
+  Min: -999.000000, Max: 0.999512
+  Unique values: 3346
+  Top 3 values:
+    0.999023: 268 (4.3%)
+    0.999512: 212 (3.4%)
+    0.998535: 113 (1.8%)
+  Auto-correlation: 1.0000
+
+================================================================================
+AFTER is_Res == 1 filter:
+================================================================================
+After filtering: 6169 events (dropped 0)
+
+Res_CosThetaStar_jj:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -2.588788, Std: 50.814366
+  Min: -999.000000, Max: 0.999804
+  Unique values: 6154
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    -0.340963: 1 (0.0%)
+    -0.971196: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_CosThetaStar_gg:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -2.600301, Std: 50.812748
+  Min: -999.000000, Max: 0.999909
+  Unique values: 6154
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    0.166841: 1 (0.0%)
+    0.012894: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_CosThetaStar_CS:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -2.606319, Std: 50.813039
+  Min: -999.000000, Max: 0.999774
+  Unique values: 6154
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    -0.948635: 1 (0.0%)
+    -0.739049: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_jg_min:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -1.225043, Std: 50.883109
+  Min: -999.000000, Max: 3.816573
+  Unique values: 6150
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    1.533874: 2 (0.0%)
+    1.063880: 2 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_j1g1:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -0.137564, Std: 50.940767
+  Min: -999.000000, Max: 5.299645
+  Unique values: 6151
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    2.902596: 2 (0.0%)
+    2.871352: 2 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_j1g2:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -0.467148, Std: 50.925206
+  Min: -999.000000, Max: 5.205481
+  Unique values: 6154
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    3.547884: 1 (0.0%)
+    2.479420: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_j2g1:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -0.321589, Std: 50.932925
+  Min: -999.000000, Max: 5.380234
+  Unique values: 6151
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    2.919670: 2 (0.0%)
+    1.830506: 2 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_j2g2:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -0.441745, Std: 50.927712
+  Min: -999.000000, Max: 5.309478
+  Unique values: 6153
+  Top 3 values:
+    -999.000000: 16 (0.3%)
+    2.344419: 2 (0.0%)
+    2.596541: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_lead_bjet_btagPNetB:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -1.960656, Std: 50.844413
+  Min: -999.000000, Max: 0.999512
+  Unique values: 2654
+  Top 3 values:
+    0.999512: 471 (7.6%)
+    0.999023: 447 (7.2%)
+    0.998535: 193 (3.1%)
+  Auto-correlation: 1.0000
+
+Res_sublead_bjet_btagPNetB:
+  Total: 6,169 | NaN: 0 (0.0%) | Valid: 6,169
+  Mean: -2.125074, Std: 50.836126
+  Min: -999.000000, Max: 0.999512
+  Unique values: 3346
+  Top 3 values:
+    0.999023: 268 (4.3%)
+    0.999512: 212 (3.4%)
+    0.998535: 113 (1.8%)
+  Auto-correlation: 1.0000
+
+================================================================================
+CORRELATION MATRIX (filtered signal)
+================================================================================
+
+Full correlation matrix:
+                            Res_CosThetaStar_jj  ...  Res_sublead_bjet_btagPNetB
+Res_CosThetaStar_jj                    1.000000  ...                    0.999892
+Res_CosThetaStar_gg                    0.999883  ...                    0.999913
+Res_CosThetaStar_CS                    0.999855  ...                    0.999902
+Res_DeltaR_jg_min                      0.999870  ...                    0.999900
+Res_DeltaR_j1g1                        0.999831  ...                    0.999865
+Res_DeltaR_j1g2                        0.999802  ...                    0.999844
+Res_DeltaR_j2g1                        0.999798  ...                    0.999819
+Res_DeltaR_j2g2                        0.999776  ...                    0.999795
+Res_lead_bjet_btagPNetB                0.999892  ...                    0.999926
+Res_sublead_bjet_btagPNetB             0.999892  ...                    1.000000
+
+[10 rows x 10 columns]
+
+Perfectly correlated pairs (|r| ≥ 0.9999):
+  Res_CosThetaStar_gg                      <--> Res_lead_bjet_btagPNetB                 : r = 0.999915
+  Res_CosThetaStar_gg                      <--> Res_sublead_bjet_btagPNetB              : r = 0.999913
+  Res_CosThetaStar_CS                      <--> Res_lead_bjet_btagPNetB                 : r = 0.999902
+  Res_CosThetaStar_CS                      <--> Res_sublead_bjet_btagPNetB              : r = 0.999902
+  Res_DeltaR_jg_min                        <--> Res_lead_bjet_btagPNetB                 : r = 0.999902
+  Res_lead_bjet_btagPNetB                  <--> Res_sublead_bjet_btagPNetB              : r = 0.999926
+
+================================================================================
+BACKGROUND: GGJets sample
+================================================================================
+Loaded 898062 bkg events
+After is_Res==1: 898062 events (dropped 0)
+
+Background feature statistics (filtered):
+
+Res_CosThetaStar_jj:
+  Total: 898,062 | NaN: 0 (0.0%) | Valid: 898,062
+  Mean: -4.638677, Std: 67.926980
+  Min: -999.000000, Max: 0.999999
+  Unique values: 893892
+  Top 3 values:
+    -999.000000: 4,171 (0.5%)
+    0.973714: 1 (0.0%)
+    -0.399927: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_CosThetaStar_gg:
+  Total: 898,062 | NaN: 0 (0.0%) | Valid: 898,062
+  Mean: -4.639825, Std: 67.925690
+  Min: -999.000000, Max: 0.999978
+  Unique values: 893892
+  Top 3 values:
+    -999.000000: 4,171 (0.5%)
+    -0.598037: 1 (0.0%)
+    -0.514616: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_CosThetaStar_CS:
+  Total: 898,062 | NaN: 0 (0.0%) | Valid: 898,062
+  Mean: -4.639211, Std: 67.927798
+  Min: -999.000000, Max: 1.000000
+  Unique values: 893892
+  Top 3 values:
+    -999.000000: 4,171 (0.5%)
+    0.738672: 1 (0.0%)
+    -0.785520: 1 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_jg_min:
+  Total: 898,062 | NaN: 0 (0.0%) | Valid: 898,062
+  Mean: -3.277462, Std: 68.019723
+  Min: -999.000000, Max: 5.082856
+  Unique values: 870316
+  Top 3 values:
+    -999.000000: 4,171 (0.5%)
+    0.644943: 5 (0.0%)
+    1.433970: 4 (0.0%)
+  Auto-correlation: 1.0000
+
+Res_DeltaR_j1g1:
+  Total: 898,062 | NaN: 0 (0.0%) | Valid: 898,062
+  Mean: -2.013450, Std: 68.108824
+  Min: -999.000000, Max: 5.843018
+  Unique values: 860010
+  Top 3 values:
+    -999.000000: 4,171 (0.5%)
+    2.893599: 5 (0.0%)
+    3.021502: 5 (0.0%)
+  Auto-correlation: 1.0000
+
+================================================================================
+DIAGNOSIS COMPLETE
+================================================================================

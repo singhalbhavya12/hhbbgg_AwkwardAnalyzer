@@ -2,7 +2,12 @@
 
 
 ## File storage
-* Backgrounds and data: `/eos/cms/store/group/phys_b2g/HHbbgg/HiggsDNA_parquet/v4/Run3_2024`
+* Backgrounds and data: 
+2022preEE: `/eos/cms/store/group/phys_b2g/HHbbgg/HiggsDNA_parquet/v3/Run3_2022/sim/preEE/`
+2022postEE: `/eos/cms/store/group/phys_b2g/HHbbgg/HiggsDNA_parquet/v3/Run3_2022/sim/preEE/`
+2023preBPix: `/eos/cms/store/group/phys_b2g/HHbbgg/HiggsDNA_parquet/v3/Run3_2023/sim/preBPix/`
+2023postBPix: `/eos/cms/store/group/phys_b2g/HHbbgg/HiggsDNA_parquet/v3/Run3_2023/sim/postBPix/`
+2024: `/eos/cms/store/group/phys_b2g/HHbbgg/HiggsDNA_parquet/v4/Run3_2024`
 * Signal: `/eos/user/b/bsahu/HiggsDNA_v4PrelimProd/2024/merged/`
 
 
