@@ -84,4 +84,4 @@ stats_study/**/*.so
 *.patch
 
 # *.png
-# *.pdf
+*.pdf

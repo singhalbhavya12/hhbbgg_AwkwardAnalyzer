@@ -1,0 +1,81 @@
+{
+  "feature_set": "disc_low",
+  "engineered_feature_set": "boost_var",
+  "engineered_features": [
+    "pt_jj_over_M_jjgg",
+    "pt_gg_over_M_jjgg"
+  ],
+  "mvaid_wp_use_filter": true,
+  "mvaid_wp_filter_modes": [
+    "lead_wp90",
+    "sublead_wp90"
+  ],
+  "mvaid_wp_label": "lead_wp90__sublead_wp90",
+  "mvaid_wp_columns": [
+    "lead_mvaID_WP80",
+    "lead_mvaID_WP90",
+    "sublead_mvaID_WP80",
+    "sublead_mvaID_WP90"
+  ],
+  "mass_category": "MX240_MY90",
+  "active_years": [
+    "2024"
+  ],
+  "signal_label": "MX240_MY90_2024-disc_low-eng_boost_var-mvaid_lead_wp90__sublead_wp90",
+  "features": [
+    "Res_CosThetaStar_gg",
+    "Res_CosThetaStar_CS",
+    "Res_lead_bjet_btagPNetB",
+    "Res_sublead_bjet_btagPNetB",
+    "pt_jj_over_M_jjgg",
+    "pt_gg_over_M_jjgg"
+  ],
+  "scaler_mean": [
+    0.31668504665952163,
+    -0.003658127055909106,
+    0.07144055828630196,
+    0.07011214918926174,
+    0.19904926039796328,
+    0.1937208744379717
+  ],
+  "scaler_scale": [
+    0.41891894644585553,
+    0.7436748005565441,
+    0.18299009565077337,
+    0.16551553643029931,
+    0.12743233665682263,
+    0.12320269346888121
+  ],
+  "signal_points": [
+    {
+      "MX": 240,
+      "MY": 90
+    }
+  ],
+  "weighted_auc": 0.5,
+  "unweighted_auc": 0.5,
+  "n_signal": 21656,
+  "n_background": 2844067,
+  "best_iteration": 0,
+  "runtime_seconds": 2.785047110868618,
+  "optimization_settings": {
+    "plot_correlation_matrix": false,
+    "plot_feature_importance": false
+  },
+  "xgb_params": {
+    "n_estimators": 1000,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 50,
+    "gamma": 1.0,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "eval_metric": "logloss",
+    "random_state": 42,
+    "n_jobs": 8,
+    "tree_method": "hist"
+  },
+  "early_stopping_rounds": 20
+}

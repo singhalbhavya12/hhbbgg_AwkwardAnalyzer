@@ -1,0 +1,177 @@
+{
+  "feature_set": "disc_low",
+  "engineered_feature_set": "none",
+  "engineered_features": [],
+  "mass_category": "low",
+  "active_years": [
+    "2022preEE",
+    "2022postEE"
+  ],
+  "signal_label": "low_2022preEE_2022postEE-disc_low-eng_none",
+  "features": [
+    "Res_CosThetaStar_gg",
+    "Res_CosThetaStar_CS",
+    "Res_lead_bjet_btagPNetB",
+    "Res_sublead_bjet_btagPNetB"
+  ],
+  "scaler_mean": [
+    -0.002734258962906627,
+    -0.005508626404327336,
+    0.17209520352169957,
+    0.1426634646833868
+  ],
+  "scaler_scale": [
+    0.5181867686216945,
+    0.7140342834344532,
+    0.3184091526726887,
+    0.276502263403228
+  ],
+  "signal_points": [
+    {
+      "MX": 240,
+      "MY": 50
+    },
+    {
+      "MX": 240,
+      "MY": 60
+    },
+    {
+      "MX": 240,
+      "MY": 70
+    },
+    {
+      "MX": 240,
+      "MY": 80
+    },
+    {
+      "MX": 240,
+      "MY": 90
+    },
+    {
+      "MX": 240,
+      "MY": 95
+    },
+    {
+      "MX": 280,
+      "MY": 50
+    },
+    {
+      "MX": 280,
+      "MY": 60
+    },
+    {
+      "MX": 280,
+      "MY": 70
+    },
+    {
+      "MX": 280,
+      "MY": 80
+    },
+    {
+      "MX": 280,
+      "MY": 90
+    },
+    {
+      "MX": 280,
+      "MY": 95
+    },
+    {
+      "MX": 300,
+      "MY": 50
+    },
+    {
+      "MX": 300,
+      "MY": 60
+    },
+    {
+      "MX": 300,
+      "MY": 70
+    },
+    {
+      "MX": 300,
+      "MY": 80
+    },
+    {
+      "MX": 300,
+      "MY": 90
+    },
+    {
+      "MX": 300,
+      "MY": 95
+    },
+    {
+      "MX": 320,
+      "MY": 50
+    },
+    {
+      "MX": 320,
+      "MY": 60
+    },
+    {
+      "MX": 320,
+      "MY": 70
+    },
+    {
+      "MX": 320,
+      "MY": 80
+    },
+    {
+      "MX": 320,
+      "MY": 90
+    },
+    {
+      "MX": 320,
+      "MY": 95
+    },
+    {
+      "MX": 350,
+      "MY": 50
+    },
+    {
+      "MX": 350,
+      "MY": 60
+    },
+    {
+      "MX": 350,
+      "MY": 70
+    },
+    {
+      "MX": 350,
+      "MY": 80
+    },
+    {
+      "MX": 350,
+      "MY": 90
+    },
+    {
+      "MX": 350,
+      "MY": 95
+    }
+  ],
+  "weighted_auc": 0.9497642146996013,
+  "unweighted_auc": 0.9350697811879163,
+  "n_signal": 844315,
+  "n_background": 3775922,
+  "best_iteration": 226,
+  "runtime_seconds": 25.342460568994284,
+  "optimization_settings": {
+    "plot_correlation_matrix": false,
+    "plot_feature_importance": false
+  },
+  "xgb_params": {
+    "n_estimators": 1000,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 50,
+    "gamma": 1.0,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "eval_metric": "logloss",
+    "random_state": 42,
+    "n_jobs": 8,
+    "tree_method": "hist"
+  },
+  "early_stopping_rounds": 20
+}

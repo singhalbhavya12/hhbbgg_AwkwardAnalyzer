@@ -1,0 +1,197 @@
+{
+  "feature_set": "disc_low",
+  "engineered_feature_set": "boost_var",
+  "engineered_features": [
+    "pt_jj_over_M_jjgg",
+    "pt_gg_over_M_jjgg"
+  ],
+  "mvaid_wp_use_filter": true,
+  "mvaid_wp_filter_modes": [
+    "lead_wp80",
+    "sublead_wp80"
+  ],
+  "mvaid_wp_label": "lead_wp80__sublead_wp80",
+  "mvaid_wp_columns": [
+    "lead_mvaID_WP80",
+    "lead_mvaID_WP90",
+    "sublead_mvaID_WP80",
+    "sublead_mvaID_WP90"
+  ],
+  "mass_category": "low",
+  "active_years": [
+    "2024"
+  ],
+  "signal_label": "low_2024-disc_low-eng_boost_var-mvaid_lead_wp80__sublead_wp80",
+  "features": [
+    "Res_CosThetaStar_gg",
+    "Res_CosThetaStar_CS",
+    "Res_lead_bjet_btagPNetB",
+    "Res_sublead_bjet_btagPNetB",
+    "pt_jj_over_M_jjgg",
+    "pt_gg_over_M_jjgg"
+  ],
+  "scaler_mean": [
+    0.32181935913318416,
+    -0.003741993265728983,
+    0.1890003513135677,
+    0.1588194125382844,
+    0.21879007838719822,
+    0.2222313495230148
+  ],
+  "scaler_scale": [
+    0.40895102931778854,
+    0.7116287873992614,
+    0.3396272931649241,
+    0.2993815234259803,
+    0.1379879791799909,
+    0.14943310039198937
+  ],
+  "signal_points": [
+    {
+      "MX": 240,
+      "MY": 50
+    },
+    {
+      "MX": 240,
+      "MY": 60
+    },
+    {
+      "MX": 240,
+      "MY": 70
+    },
+    {
+      "MX": 240,
+      "MY": 80
+    },
+    {
+      "MX": 240,
+      "MY": 90
+    },
+    {
+      "MX": 240,
+      "MY": 95
+    },
+    {
+      "MX": 280,
+      "MY": 50
+    },
+    {
+      "MX": 280,
+      "MY": 60
+    },
+    {
+      "MX": 280,
+      "MY": 70
+    },
+    {
+      "MX": 280,
+      "MY": 80
+    },
+    {
+      "MX": 280,
+      "MY": 90
+    },
+    {
+      "MX": 280,
+      "MY": 95
+    },
+    {
+      "MX": 300,
+      "MY": 50
+    },
+    {
+      "MX": 300,
+      "MY": 60
+    },
+    {
+      "MX": 300,
+      "MY": 70
+    },
+    {
+      "MX": 300,
+      "MY": 80
+    },
+    {
+      "MX": 300,
+      "MY": 90
+    },
+    {
+      "MX": 300,
+      "MY": 95
+    },
+    {
+      "MX": 320,
+      "MY": 50
+    },
+    {
+      "MX": 320,
+      "MY": 60
+    },
+    {
+      "MX": 320,
+      "MY": 70
+    },
+    {
+      "MX": 320,
+      "MY": 80
+    },
+    {
+      "MX": 320,
+      "MY": 90
+    },
+    {
+      "MX": 320,
+      "MY": 95
+    },
+    {
+      "MX": 350,
+      "MY": 50
+    },
+    {
+      "MX": 350,
+      "MY": 60
+    },
+    {
+      "MX": 350,
+      "MY": 70
+    },
+    {
+      "MX": 350,
+      "MY": 80
+    },
+    {
+      "MX": 350,
+      "MY": 90
+    },
+    {
+      "MX": 350,
+      "MY": 95
+    }
+  ],
+  "weighted_auc": 0.946272693603055,
+  "unweighted_auc": 0.9449316968618393,
+  "n_signal": 620444,
+  "n_background": 2368210,
+  "best_iteration": 132,
+  "runtime_seconds": 7.865895309019834,
+  "optimization_settings": {
+    "plot_correlation_matrix": false,
+    "plot_feature_importance": false
+  },
+  "xgb_params": {
+    "n_estimators": 1000,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 50,
+    "gamma": 1.0,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "eval_metric": "logloss",
+    "random_state": 42,
+    "n_jobs": 8,
+    "tree_method": "hist"
+  },
+  "early_stopping_rounds": 20
+}

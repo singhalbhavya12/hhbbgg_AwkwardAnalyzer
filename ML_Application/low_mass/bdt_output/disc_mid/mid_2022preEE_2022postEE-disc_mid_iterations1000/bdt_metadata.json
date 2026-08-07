@@ -1,0 +1,196 @@
+{
+  "feature_set": "disc_mid",
+  "mass_category": "mid",
+  "active_years": [
+    "2022preEE",
+    "2022postEE"
+  ],
+  "signal_label": "mid_2022preEE_2022postEE-disc_mid",
+  "features": [
+    "Res_CosThetaStar_CS",
+    "Res_DeltaR_j1g2",
+    "Res_lead_bjet_btagPNetB",
+    "Res_sublead_bjet_btagPNetB",
+    "Res_lead_bjet_PNetRegPtRawRes",
+    "Res_sublead_bjet_PNetRegPtRawRes",
+    "Res_pholead_PtOverM",
+    "Res_phosublead_PtOverM",
+    "Res_FirstJet_PtOverM",
+    "pt_jj_over_M_jjgg",
+    "pt_gg_over_M_jjgg"
+  ],
+  "scaler_mean": [
+    -0.005162533214772394,
+    2.3003319929181347,
+    0.2229688977308406,
+    0.17365734062336474,
+    0.12331421889907815,
+    0.17319305442499947,
+    0.8285746855645736,
+    0.43818117392459066,
+    0.983537492539926,
+    0.23575461162975678,
+    0.24004378564707124
+  ],
+  "scaler_scale": [
+    0.6996495577074706,
+    0.9164673187294174,
+    0.3621079654056612,
+    0.31133401689256596,
+    0.0585793366013513,
+    0.0729759299870844,
+    0.44946354036081365,
+    0.1889029821526445,
+    0.7997018636509861,
+    0.1466090919826387,
+    0.15939064010511497
+  ],
+  "signal_points": [
+    {
+      "MX": 400,
+      "MY": 50
+    },
+    {
+      "MX": 400,
+      "MY": 60
+    },
+    {
+      "MX": 400,
+      "MY": 70
+    },
+    {
+      "MX": 400,
+      "MY": 80
+    },
+    {
+      "MX": 400,
+      "MY": 90
+    },
+    {
+      "MX": 400,
+      "MY": 95
+    },
+    {
+      "MX": 450,
+      "MY": 50
+    },
+    {
+      "MX": 450,
+      "MY": 60
+    },
+    {
+      "MX": 450,
+      "MY": 70
+    },
+    {
+      "MX": 450,
+      "MY": 80
+    },
+    {
+      "MX": 450,
+      "MY": 90
+    },
+    {
+      "MX": 450,
+      "MY": 95
+    },
+    {
+      "MX": 500,
+      "MY": 50
+    },
+    {
+      "MX": 500,
+      "MY": 60
+    },
+    {
+      "MX": 500,
+      "MY": 70
+    },
+    {
+      "MX": 500,
+      "MY": 80
+    },
+    {
+      "MX": 500,
+      "MY": 90
+    },
+    {
+      "MX": 500,
+      "MY": 95
+    },
+    {
+      "MX": 550,
+      "MY": 50
+    },
+    {
+      "MX": 550,
+      "MY": 60
+    },
+    {
+      "MX": 550,
+      "MY": 70
+    },
+    {
+      "MX": 550,
+      "MY": 80
+    },
+    {
+      "MX": 550,
+      "MY": 90
+    },
+    {
+      "MX": 550,
+      "MY": 95
+    },
+    {
+      "MX": 600,
+      "MY": 50
+    },
+    {
+      "MX": 600,
+      "MY": 60
+    },
+    {
+      "MX": 600,
+      "MY": 70
+    },
+    {
+      "MX": 600,
+      "MY": 80
+    },
+    {
+      "MX": 600,
+      "MY": 90
+    },
+    {
+      "MX": 600,
+      "MY": 95
+    }
+  ],
+  "weighted_auc": 0.9920256692739091,
+  "unweighted_auc": 0.9872786211660288,
+  "n_signal": 1105454,
+  "n_background": 3775922,
+  "best_iteration": 997,
+  "runtime_seconds": 120.90881293592975,
+  "optimization_settings": {
+    "plot_correlation_matrix": false,
+    "plot_feature_importance": false
+  },
+  "xgb_params": {
+    "n_estimators": 1000,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 50,
+    "gamma": 1.0,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "eval_metric": "logloss",
+    "random_state": 42,
+    "n_jobs": 8,
+    "tree_method": "hist"
+  },
+  "early_stopping_rounds": 20
+}

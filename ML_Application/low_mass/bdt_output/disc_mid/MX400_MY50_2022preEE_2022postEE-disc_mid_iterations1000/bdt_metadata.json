@@ -1,0 +1,80 @@
+{
+  "feature_set": "disc_mid",
+  "mass_category": "MX400_MY50",
+  "active_years": [
+    "2022preEE",
+    "2022postEE"
+  ],
+  "signal_label": "MX400_MY50_2022preEE_2022postEE-disc_mid",
+  "features": [
+    "Res_CosThetaStar_CS",
+    "Res_DeltaR_j1g2",
+    "Res_lead_bjet_btagPNetB",
+    "Res_sublead_bjet_btagPNetB",
+    "Res_lead_bjet_PNetRegPtRawRes",
+    "Res_sublead_bjet_PNetRegPtRawRes",
+    "Res_pholead_PtOverM",
+    "Res_phosublead_PtOverM",
+    "Res_FirstJet_PtOverM",
+    "pt_jj_over_M_jjgg",
+    "pt_gg_over_M_jjgg"
+  ],
+  "scaler_mean": [
+    -0.006152506832767062,
+    2.2123372092185636,
+    0.07666282048362458,
+    0.07306783573159663,
+    0.1323734767528857,
+    0.1795182214218799,
+    0.6940957953902455,
+    0.3919150036542495,
+    0.7849244609124506,
+    0.2021439034273625,
+    0.1956261431313014
+  ],
+  "scaler_scale": [
+    0.7405573474863256,
+    0.966996527135217,
+    0.1833132555058148,
+    0.16300223281817589,
+    0.05986627780164856,
+    0.07160644979516735,
+    0.30310117044059554,
+    0.11942155033567978,
+    0.593669973152916,
+    0.13066673586250627,
+    0.1264280493632916
+  ],
+  "signal_points": [
+    {
+      "MX": 400,
+      "MY": 50
+    }
+  ],
+  "weighted_auc": 0.985536498977396,
+  "unweighted_auc": 0.9773852411678272,
+  "n_signal": 34373,
+  "n_background": 3775922,
+  "best_iteration": 202,
+  "runtime_seconds": 37.941176186082885,
+  "optimization_settings": {
+    "plot_correlation_matrix": false,
+    "plot_feature_importance": false
+  },
+  "xgb_params": {
+    "n_estimators": 1000,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 50,
+    "gamma": 1.0,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "eval_metric": "logloss",
+    "random_state": 42,
+    "n_jobs": 8,
+    "tree_method": "hist"
+  },
+  "early_stopping_rounds": 20
+}

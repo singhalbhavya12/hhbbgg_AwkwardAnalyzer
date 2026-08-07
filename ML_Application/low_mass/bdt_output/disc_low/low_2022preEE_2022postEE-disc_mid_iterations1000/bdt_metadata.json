@@ -1,0 +1,196 @@
+{
+  "feature_set": "disc_mid",
+  "mass_category": "low",
+  "active_years": [
+    "2022preEE",
+    "2022postEE"
+  ],
+  "signal_label": "low_2022preEE_2022postEE-disc_mid",
+  "features": [
+    "Res_CosThetaStar_CS",
+    "Res_DeltaR_j1g2",
+    "Res_lead_bjet_btagPNetB",
+    "Res_sublead_bjet_btagPNetB",
+    "Res_lead_bjet_PNetRegPtRawRes",
+    "Res_sublead_bjet_PNetRegPtRawRes",
+    "Res_pholead_PtOverM",
+    "Res_phosublead_PtOverM",
+    "Res_FirstJet_PtOverM",
+    "pt_jj_over_M_jjgg",
+    "pt_gg_over_M_jjgg"
+  ],
+  "scaler_mean": [
+    -0.005508626404327336,
+    2.2021082584215517,
+    0.17209520352169957,
+    0.1426634646833868,
+    0.12943588496911346,
+    0.17792095123210386,
+    0.7181651265805388,
+    0.4006757460742329,
+    0.8223543717891304,
+    0.21760461119845617,
+    0.21807513970262393
+  ],
+  "scaler_scale": [
+    0.7140342834344532,
+    0.9404073097728775,
+    0.3184091526726887,
+    0.276502263403228,
+    0.058960666130958156,
+    0.07193129920444012,
+    0.3185941260272709,
+    0.13092123282401907,
+    0.6020695176177929,
+    0.13907883575047048,
+    0.14673624942967844
+  ],
+  "signal_points": [
+    {
+      "MX": 240,
+      "MY": 50
+    },
+    {
+      "MX": 240,
+      "MY": 60
+    },
+    {
+      "MX": 240,
+      "MY": 70
+    },
+    {
+      "MX": 240,
+      "MY": 80
+    },
+    {
+      "MX": 240,
+      "MY": 90
+    },
+    {
+      "MX": 240,
+      "MY": 95
+    },
+    {
+      "MX": 280,
+      "MY": 50
+    },
+    {
+      "MX": 280,
+      "MY": 60
+    },
+    {
+      "MX": 280,
+      "MY": 70
+    },
+    {
+      "MX": 280,
+      "MY": 80
+    },
+    {
+      "MX": 280,
+      "MY": 90
+    },
+    {
+      "MX": 280,
+      "MY": 95
+    },
+    {
+      "MX": 300,
+      "MY": 50
+    },
+    {
+      "MX": 300,
+      "MY": 60
+    },
+    {
+      "MX": 300,
+      "MY": 70
+    },
+    {
+      "MX": 300,
+      "MY": 80
+    },
+    {
+      "MX": 300,
+      "MY": 90
+    },
+    {
+      "MX": 300,
+      "MY": 95
+    },
+    {
+      "MX": 320,
+      "MY": 50
+    },
+    {
+      "MX": 320,
+      "MY": 60
+    },
+    {
+      "MX": 320,
+      "MY": 70
+    },
+    {
+      "MX": 320,
+      "MY": 80
+    },
+    {
+      "MX": 320,
+      "MY": 90
+    },
+    {
+      "MX": 320,
+      "MY": 95
+    },
+    {
+      "MX": 350,
+      "MY": 50
+    },
+    {
+      "MX": 350,
+      "MY": 60
+    },
+    {
+      "MX": 350,
+      "MY": 70
+    },
+    {
+      "MX": 350,
+      "MY": 80
+    },
+    {
+      "MX": 350,
+      "MY": 90
+    },
+    {
+      "MX": 350,
+      "MY": 95
+    }
+  ],
+  "weighted_auc": 0.9710652598980584,
+  "unweighted_auc": 0.9479254189360038,
+  "n_signal": 844315,
+  "n_background": 3775922,
+  "best_iteration": 999,
+  "runtime_seconds": 53.545679726987146,
+  "optimization_settings": {
+    "plot_correlation_matrix": false,
+    "plot_feature_importance": false
+  },
+  "xgb_params": {
+    "n_estimators": 1000,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 50,
+    "gamma": 1.0,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "eval_metric": "logloss",
+    "random_state": 42,
+    "n_jobs": 8,
+    "tree_method": "hist"
+  },
+  "early_stopping_rounds": 20
+}

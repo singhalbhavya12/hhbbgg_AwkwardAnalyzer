@@ -1,0 +1,232 @@
+{
+  "feature_set": "baseline",
+  "mass_category": "low",
+  "active_years": [
+    "2022preEE",
+    "2022postEE"
+  ],
+  "signal_label": "low_2022preEE_2022postEE-baseline",
+  "features": [
+    "Res_CosThetaStar_jj",
+    "Res_CosThetaStar_gg",
+    "Res_CosThetaStar_CS",
+    "Res_DeltaR_jg_min",
+    "Res_DeltaR_j1g1",
+    "Res_DeltaR_j1g2",
+    "Res_DeltaR_j2g1",
+    "Res_DeltaR_j2g2",
+    "lead_mvaID",
+    "sublead_mvaID",
+    "Res_lead_bjet_btagPNetB",
+    "Res_sublead_bjet_btagPNetB",
+    "lead_energyErr",
+    "sublead_energyErr",
+    "sigma_m_over_m",
+    "Res_lead_bjet_PNetRegPtRawRes",
+    "Res_sublead_bjet_PNetRegPtRawRes",
+    "Res_pholead_PtOverM",
+    "Res_phosublead_PtOverM",
+    "Res_FirstJet_PtOverM",
+    "Res_SecondJet_PtOverM",
+    "pt_jj_over_M_jjgg",
+    "pt_gg_over_M_jjgg"
+  ],
+  "scaler_mean": [
+    -0.0026999346483702444,
+    -0.002734258962906627,
+    -0.005508626404327336,
+    1.38512734241489,
+    2.6115658094046745,
+    2.2021082584215517,
+    2.3458526147378755,
+    2.303280996580862,
+    0.7024160441093392,
+    0.6544480307682853,
+    0.17209520352169957,
+    0.1426634646833868,
+    2.5345134725644516,
+    1.9323711738397698,
+    0.010901938030400371,
+    0.12943588496911346,
+    0.17792095123210386,
+    0.7181651265805388,
+    0.4006757460742329,
+    0.8223543717891304,
+    0.41347773844770475,
+    0.21760461119845617,
+    0.21807513970262393
+  ],
+  "scaler_scale": [
+    0.6506934785634458,
+    0.5181867686216945,
+    0.7140342834344532,
+    0.6234170059064267,
+    0.8566875949138864,
+    0.9404073097728775,
+    0.9437240775448431,
+    0.9464764682771145,
+    0.3602192571099731,
+    0.403158224247501,
+    0.3184091526726887,
+    0.276502263403228,
+    3.833642017748433,
+    2.794134060737211,
+    0.00988845322852767,
+    0.058960666130958156,
+    0.07193129920444012,
+    0.3185941260272709,
+    0.13092123282401907,
+    0.6020695176177929,
+    0.2653429983459773,
+    0.13907883575047048,
+    0.14673624942967844
+  ],
+  "signal_points": [
+    {
+      "MX": 240,
+      "MY": 50
+    },
+    {
+      "MX": 240,
+      "MY": 60
+    },
+    {
+      "MX": 240,
+      "MY": 70
+    },
+    {
+      "MX": 240,
+      "MY": 80
+    },
+    {
+      "MX": 240,
+      "MY": 90
+    },
+    {
+      "MX": 240,
+      "MY": 95
+    },
+    {
+      "MX": 280,
+      "MY": 50
+    },
+    {
+      "MX": 280,
+      "MY": 60
+    },
+    {
+      "MX": 280,
+      "MY": 70
+    },
+    {
+      "MX": 280,
+      "MY": 80
+    },
+    {
+      "MX": 280,
+      "MY": 90
+    },
+    {
+      "MX": 280,
+      "MY": 95
+    },
+    {
+      "MX": 300,
+      "MY": 50
+    },
+    {
+      "MX": 300,
+      "MY": 60
+    },
+    {
+      "MX": 300,
+      "MY": 70
+    },
+    {
+      "MX": 300,
+      "MY": 80
+    },
+    {
+      "MX": 300,
+      "MY": 90
+    },
+    {
+      "MX": 300,
+      "MY": 95
+    },
+    {
+      "MX": 320,
+      "MY": 50
+    },
+    {
+      "MX": 320,
+      "MY": 60
+    },
+    {
+      "MX": 320,
+      "MY": 70
+    },
+    {
+      "MX": 320,
+      "MY": 80
+    },
+    {
+      "MX": 320,
+      "MY": 90
+    },
+    {
+      "MX": 320,
+      "MY": 95
+    },
+    {
+      "MX": 350,
+      "MY": 50
+    },
+    {
+      "MX": 350,
+      "MY": 60
+    },
+    {
+      "MX": 350,
+      "MY": 70
+    },
+    {
+      "MX": 350,
+      "MY": 80
+    },
+    {
+      "MX": 350,
+      "MY": 90
+    },
+    {
+      "MX": 350,
+      "MY": 95
+    }
+  ],
+  "weighted_auc": 0.9762284285924356,
+  "unweighted_auc": 0.9541647670332395,
+  "n_signal": 844315,
+  "n_background": 3775922,
+  "best_iteration": 499,
+  "runtime_seconds": 110.44385352591053,
+  "optimization_settings": {
+    "plot_correlation_matrix": false,
+    "plot_feature_importance": false
+  },
+  "xgb_params": {
+    "n_estimators": 500,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 50,
+    "gamma": 1.0,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "eval_metric": "logloss",
+    "random_state": 42,
+    "n_jobs": 8,
+    "tree_method": "hist"
+  },
+  "early_stopping_rounds": 20
+}

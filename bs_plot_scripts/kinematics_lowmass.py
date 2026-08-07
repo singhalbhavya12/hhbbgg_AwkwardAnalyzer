@@ -26,7 +26,7 @@ SIGNAL_POINTS_BY_X = {
     950: [50,60,70, 80, 90, 95, 100],#[95, 100],
     1000: [50,60,70, 80, 90, 95, 100],#[100],
 }
-
+# single_X = [240]
 LOW_X_MASSES = [240, 280, 300, 320, 350]
 MID_X_MASSES = [400, 450, 500, 550, 600]
 HIGH_X_MASSES = [650, 700, 750, 800, 850, 900, 950, 1000]
@@ -81,6 +81,22 @@ YEAR_DATASETS = {
             "GJet_PT-40_DoubleEMEnriched_MGG-80",
         ],
     },
+    "2024": {
+        "signal_dir": "/eos/user/b/bartek/hhbbgg/higgsdna_v7/2024/merged",
+        "signal_name_templates": [
+            "NMSSM_X{mx}_Y{my}",
+            "NMSSM-XtoYH-MX-{mx}-MY-{my}",
+        ],
+        # Set this to your 2024 background MC location.
+        "bkg_dir": "/eos/cms/store/group/phys_b2g/HHbbgg/HiggsDNA_parquet/v4/Run3_2024/sim/",
+        # Fill with available 2024 background process folder names.
+        # If left empty, background loading for 2024 is skipped with a warning.
+        "bkg_processes": [
+            "GGJets_MGG-80",
+            "GJet_MGG-80-PT-20to40",
+            "GJet_MGG-80-PT-40"
+        ],
+    },
 }
 
 DIRECT_FEATURES = [
@@ -106,8 +122,15 @@ DIRECT_FEATURES = [
     "Res_FirstJet_PtOverM",
     "Res_SecondJet_PtOverM",
     "Res_dijet_mass",
+    "Res_dijet_mass_DNNreg",
     "n_jets",
     "Res_HHbbggCandidate_mass",
+    # "lead_mvaID",
+    # "sublead_mvaID",
+    # "lead_mvaID_WP90",
+    # "lead_mvaID_WP80",
+    # "sublead_mvaID_WP90",
+    # "sublead_mvaID_WP80",
 ]
 
 ENGINEERING_COLS = [
@@ -127,7 +150,12 @@ EXTRA_PLOT_VARS = [
     "diphoton_mass",  # alias of 'mass' column (renamed for clarity in plots)
 ]
 
-OUTDIR = "/eos/user/b/bsinghal/analysis/www/CUA/XYH/signal/kinematics/bf_kin"
+OUTDIR = f"/eos/user/b/bsinghal/analysis/www/CUA/XYH/signal/kinematics/{'_'.join(ACTIVE_YEARS)}/individual"
+
+# Plotting mode:
+# - "grouped": lowX / midX / highX signal groups (current behavior)
+# - "individual": one signal mass point (MX, MY) at a time vs backgrounds
+PLOT_MODE = "individual"
 
 
 def columns_to_read():
@@ -186,6 +214,7 @@ def load_signal_frames(columns, active_years):
             try:
                 df = load_parquet(fp, columns)
                 df["MX"] = mx
+                df["MY"] = my
                 df["year"] = year
                 rows.append(df)
                 print(f"Loaded signal {proc} ({year}): {len(df):,} events")
@@ -264,7 +293,21 @@ def concat_or_empty(frames, columns):
     return pd.concat(frames, ignore_index=True)
 
 
-def plot_variable(var, lowX_df, midX_df, highX_df, ggJets_df, gJetPt_df):
+def safe_tag(text):
+    return str(text).replace(" ", "_").replace("/", "-")
+
+
+def plot_variable(
+    var,
+    lowX_df,
+    midX_df,
+    highX_df,
+    ggJets_df,
+    gJetPt_df,
+    title_suffix="",
+    file_suffix="",
+    signal_label="lowX",
+):
     """Produce a single normalised histogram for *var* across all datasets."""
 
     def finite_vals(df):
@@ -297,7 +340,7 @@ def plot_variable(var, lowX_df, midX_df, highX_df, ggJets_df, gJetPt_df):
     # density=True normalises each histogram so the area under it equals 1
     if len(lowX_vals) > 0:
         ax.hist(lowX_vals,  bins=bin_edges, density=True, histtype="step",
-                label="lowX",  color="red",   linestyle="-",  linewidth=1.5)
+                label=signal_label,  color="red",   linestyle="-",  linewidth=1.5)
     if len(midX_vals) > 0:
         ax.hist(midX_vals,  bins=bin_edges, density=True, histtype="step",
                 label="midX",  color="blue",  linestyle="--", linewidth=1.5)
@@ -313,14 +356,16 @@ def plot_variable(var, lowX_df, midX_df, highX_df, ggJets_df, gJetPt_df):
 
     ax.set_xlabel(var)
     ax.set_ylabel("Normalised to unit area")
-    ax.set_title(f"{' + '.join(ACTIVE_YEARS)}  —  {var}")
+    title_extra = f"  —  {title_suffix}" if title_suffix else ""
+    ax.set_title(f"{' + '.join(ACTIVE_YEARS)}  —  {var}{title_extra}")
     ax.legend()
     ax.grid(True, alpha=0.3)
     fig.tight_layout()
 
     os.makedirs(OUTDIR, exist_ok=True)
-    out_png = os.path.join(OUTDIR, f"{var}.png")
-    out_pdf = os.path.join(OUTDIR, f"{var}.pdf")
+    suffix = f"_{safe_tag(file_suffix)}" if file_suffix else ""
+    out_png = os.path.join(OUTDIR, f"{var}{suffix}.png")
+    out_pdf = os.path.join(OUTDIR, f"{var}{suffix}.pdf")
     fig.savefig(out_png)
     fig.savefig(out_pdf)
     plt.close(fig)
@@ -330,12 +375,14 @@ def plot_variable(var, lowX_df, midX_df, highX_df, ggJets_df, gJetPt_df):
 def main():
     if not ACTIVE_YEARS:
         raise ValueError("ACTIVE_YEARS is empty. Add at least one year.")
+    if PLOT_MODE not in {"grouped", "individual"}:
+        raise ValueError(f"Invalid PLOT_MODE='{PLOT_MODE}'. Use 'grouped' or 'individual'.")
 
     cols = columns_to_read()
     signal_frames = load_signal_frames(cols, ACTIVE_YEARS)
     gg_rows, gjet_rows = load_background_frames(cols, ACTIVE_YEARS)
 
-    signal_df = concat_or_empty(signal_frames, cols + ["MX"])
+    signal_df = concat_or_empty(signal_frames, cols + ["MX", "MY"])
     if signal_df.empty:
         raise RuntimeError("No signal events loaded. Check SIGNAL_DIR and SIGNAL_POINTS.")
 
@@ -344,10 +391,6 @@ def main():
     print("\nCleaning signal ...")
     signal_df = clean_sentinels(signal_df, features=raw_features_for_cleaning)
 
-    lowX_df  = signal_df[signal_df["MX"].isin(LOW_X_MASSES)].copy()
-    midX_df  = signal_df[signal_df["MX"].isin(MID_X_MASSES)].copy()
-    highX_df = signal_df[signal_df["MX"].isin(HIGH_X_MASSES)].copy()
-
     ggJets_df = concat_or_empty(gg_rows, cols)
     gJetPt_df = concat_or_empty(gjet_rows, cols)
 
@@ -355,14 +398,45 @@ def main():
     ggJets_df = clean_sentinels(ggJets_df, features=raw_features_for_cleaning)
     gJetPt_df = clean_sentinels(gJetPt_df, features=raw_features_for_cleaning)
 
-    for _df in [lowX_df, midX_df, highX_df, ggJets_df, gJetPt_df]:
-        add_engineered_features(_df)
+    add_engineered_features(ggJets_df)
+    add_engineered_features(gJetPt_df)
 
     all_vars = DIRECT_FEATURES + EXTRA_PLOT_VARS
-    print(f"\nPlotting {len(all_vars)} variables → {OUTDIR}\n")
-    for var in all_vars:
-        print(f"Plotting: {var}")
-        plot_variable(var, lowX_df, midX_df, highX_df, ggJets_df, gJetPt_df)
+    print(f"\nPlotting {len(all_vars)} variables ({PLOT_MODE}) → {OUTDIR}\n")
+
+    if PLOT_MODE == "grouped":
+        lowX_df  = signal_df[signal_df["MX"].isin(LOW_X_MASSES)].copy()
+        midX_df  = signal_df[signal_df["MX"].isin(MID_X_MASSES)].copy()
+        highX_df = signal_df[signal_df["MX"].isin(HIGH_X_MASSES)].copy()
+
+        for _df in [lowX_df, midX_df, highX_df]:
+            add_engineered_features(_df)
+
+        for var in all_vars:
+            print(f"Plotting: {var}")
+            plot_variable(var, lowX_df, midX_df, highX_df, ggJets_df, gJetPt_df)
+    else:
+        for mx, my in SIGNAL_POINTS:
+            sig_df = signal_df[(signal_df["MX"] == mx) & (signal_df["MY"] == my)].copy()
+            if sig_df.empty:
+                continue
+
+            add_engineered_features(sig_df)
+            label = f"MX{mx}_MY{my}"
+
+            for var in all_vars:
+                print(f"Plotting: {var} ({label})")
+                plot_variable(
+                    var,
+                    sig_df,
+                    pd.DataFrame(),
+                    pd.DataFrame(),
+                    ggJets_df,
+                    gJetPt_df,
+                    title_suffix=label,
+                    file_suffix=label,
+                    signal_label=label,
+                )
 
     print("\nDone.")
 
